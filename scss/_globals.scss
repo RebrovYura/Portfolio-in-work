@@ -1,0 +1,88 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $DarkGrey;
+    font-family: $MainFont;
+    font-size: 1.5rem;
+    color: $White;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.default-btn {
+    display: inline-block;
+    transition: $Time;
+    
+    a {
+        display: inline-block;
+        border: 3px solid $Turquoise;
+        padding: 0.8125rem 3.125rem;
+        font-size: 1.125rem;
+        color: $Turquoise;
+        transition: $Time;
+
+        &:hover {
+            color: $White;
+        }
+    }
+
+    &:hover{
+        background-color: $Turquoise;
+    }
+
+
+    
+}
+
+.svg-icon {
+
+}
+
+
+
+

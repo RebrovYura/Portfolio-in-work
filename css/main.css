@@ -1,0 +1,154 @@
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #181618;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: #EAEAEA;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+.default-btn {
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.default-btn a {
+  display: inline-block;
+  border: 3px solid #08D9D6;
+  padding: 0.8125rem 3.125rem;
+  font-size: 1.125rem;
+  color: #08D9D6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.default-btn a:hover {
+  color: #EAEAEA;
+}
+
+.default-btn:hover {
+  background-color: #08D9D6;
+}
+
+.header {
+  height: 100vh;
+}
+
+.header nav {
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
+}
+
+.header__burger > span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: #EAEAEA;
+}
+
+.header__burger > span:not(:last-child) {
+  margin-bottom: 0.1875rem;
+}
+
+.header__links {
+  font-size: 1.5rem;
+}
+
+.header__links a {
+  color: #EAEAEA;
+}
+
+.header__links a:not(:last-child) {
+  margin-right: 3.125rem;
+}
+
+.header__content {
+  padding-top: 8.125rem;
+}
+
+.header__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 3.75rem;
+  background-image: linear-gradient(45deg, #c0392b, #8e44ad);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: gradient 5s ease infinite alternate;
+          animation: gradient 5s ease infinite alternate;
+}
+
+.header__subtitle {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #838383;
+  letter-spacing: 0.1em;
+  padding-top: 0.875rem;
+  padding-bottom: 1.875rem;
+}
+
+.header__image {
+  position: absolute;
+  width: 30.25rem;
+  height: 32rem;
+  right: -18.4375rem;
+  bottom: 0;
+  opacity: 0.2;
+  z-index: -1;
+}
