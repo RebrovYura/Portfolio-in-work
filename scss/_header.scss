@@ -40,22 +40,22 @@
             position: relative;
 
             &:first-child{
-                height: 100%;
+                height: 36px;
+                width: 36px;
             }
 
             &:not(:last-child) {
                 margin-right: 3.125rem;
             }
             
-            &:not(:nth-child(1))::before, 
-            &:not(:nth-child(2))::before {
+            &:not(:first-child)::before {
                 content: "";
                 position: absolute;
                 display: block;
                 height: 3px;
                 right: 0;
                 left: 0;
-                bottom: -30px;
+                bottom: -1.875rem;
                 transition: $Time;
             }
 
@@ -71,6 +71,19 @@
         @include breakpoint-up(super) {
             font-size: 1.75rem;
         }
+    }
+
+    .sun, .moon {
+
+        &:hover svg{
+            transform: scale(1.1);
+        }
+        
+
+    }
+
+    .moon {
+
     }
 
     &__content {
@@ -112,6 +125,7 @@
             font-size: 4.2rem;
             max-width: 50.5rem;
             line-height: 5.4375rem;
+            letter-spacing: 0.08em;
         }
     }
 
