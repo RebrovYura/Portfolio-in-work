@@ -31,17 +31,24 @@
     &__links {
         height: 100%;
         font-size: $Font-text;
+        font-family: $SecondFont;
+        letter-spacing: 0.1em;
         
         a {
             color: $White;
             transition: $Time;
             position: relative;
 
+            &:first-child{
+                height: 100%;
+            }
+
             &:not(:last-child) {
                 margin-right: 3.125rem;
             }
             
-            &:not(:first-child)::before {
+            &:not(:nth-child(1))::before, 
+            &:not(:nth-child(2))::before {
                 content: "";
                 position: absolute;
                 display: block;
@@ -62,7 +69,7 @@
         }
 
         @include breakpoint-up(super) {
-            font-size: $Font-heading;
+            font-size: 1.75rem;
         }
     }
 
@@ -75,7 +82,7 @@
         }
 
         @include breakpoint-up(super) {
-            padding-top: 13rem;
+            padding-top: 10rem;
         }
     }
 
@@ -102,7 +109,7 @@
         }
 
         @include breakpoint-up(super) {
-            font-size: 4.5rem;
+            font-size: 4.2rem;
             max-width: 50.5rem;
             line-height: 5.4375rem;
         }
@@ -113,24 +120,22 @@
         font-style: italic;
         color: $Grey;
         letter-spacing: 0.1em;
-        
-        // padding-top: 0.875rem;
-        // padding-bottom: 1.875rem;
+        margin: 1.875rem 0 2.5rem;
 
         @include breakpoint-down(small) {
             font-size: 0.75rem;
+            margin: 1rem 0 1rem;
         }
 
         @include breakpoint-up(medium) {
             font-size: 1.2rem;
-            line-height: 4.5rem;
+            //line-height: 4.5rem;
             letter-spacing: 0.2rem;
+            
         }
 
-        
-
         @include breakpoint-up(super) {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             max-width: 50.5rem;
             margin: 1.875rem 0 2.5rem;
             
@@ -148,12 +153,9 @@
         }
 
         @include breakpoint-up(super) {
-            svg {
-                transform: scale(1.2);
-            }
             a {
                 &:not(:last-child) {
-                    margin-right: 2.875rem;
+                    margin-right: 2.1rem;
                 }   
             }
             
@@ -164,7 +166,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        z-index: -1;
+        z-index: 1;
     }
 
     &__image-desktop {

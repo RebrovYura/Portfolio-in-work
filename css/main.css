@@ -78,6 +78,8 @@ a {
 
 .default-btn {
   display: inline-block;
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 0.1em;
   font-size: 1.5rem;
   border: 3px solid #08D9D6;
   padding: 1.2rem 3.2rem;
@@ -99,7 +101,7 @@ a {
 
 @media (min-width: 105em) {
   .default-btn {
-    font-size: 2.25rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -111,6 +113,33 @@ a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   fill: #FF2E63;
+}
+
+.disabled {
+  display: none;
+}
+
+.light-theme {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #EAEAEA;
+}
+
+.light-theme a {
+  color: #838383;
+}
+
+.light-theme nav a {
+  color: #838383;
+}
+
+.light-theme .svg-icon {
+  fill: #838383;
+}
+
+.dark-theme {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 @-webkit-keyframes gradient {
@@ -169,6 +198,8 @@ a {
 .header__links {
   height: 100%;
   font-size: 1.5rem;
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 0.1em;
 }
 
 .header__links a {
@@ -178,11 +209,15 @@ a {
   position: relative;
 }
 
+.header__links a:first-child {
+  height: 100%;
+}
+
 .header__links a:not(:last-child) {
   margin-right: 3.125rem;
 }
 
-.header__links a:not(:first-child)::before {
+.header__links a:not(:nth-child(1))::before, .header__links a:not(:nth-child(2))::before {
   content: "";
   position: absolute;
   display: block;
@@ -204,7 +239,7 @@ a {
 
 @media (min-width: 105em) {
   .header__links {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -221,7 +256,7 @@ a {
 
 @media (min-width: 105em) {
   .header__content {
-    padding-top: 13rem;
+    padding-top: 10rem;
   }
 }
 
@@ -254,7 +289,7 @@ a {
 
 @media (min-width: 105em) {
   .header__title {
-    font-size: 4.5rem;
+    font-size: 4.2rem;
     max-width: 50.5rem;
     line-height: 5.4375rem;
   }
@@ -265,25 +300,26 @@ a {
   font-style: italic;
   color: #838383;
   letter-spacing: 0.1em;
+  margin: 1.875rem 0 2.5rem;
 }
 
 @media (max-width: 39.9375em) {
   .header__subtitle {
     font-size: 0.75rem;
+    margin: 1rem 0 1rem;
   }
 }
 
 @media (min-width: 40em) {
   .header__subtitle {
     font-size: 1.2rem;
-    line-height: 4.5rem;
     letter-spacing: 0.2rem;
   }
 }
 
 @media (min-width: 105em) {
   .header__subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     max-width: 50.5rem;
     margin: 1.875rem 0 2.5rem;
   }
@@ -300,12 +336,8 @@ a {
 }
 
 @media (min-width: 105em) {
-  .header__social svg {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
   .header__social a:not(:last-child) {
-    margin-right: 2.875rem;
+    margin-right: 2.1rem;
   }
 }
 
@@ -313,7 +345,7 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .header__image-desktop {

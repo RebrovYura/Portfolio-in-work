@@ -71,6 +71,8 @@ a {
 
 .default-btn {
     display: inline-block;
+    font-family: $SecondFont;
+    letter-spacing: 0.1em;
     font-size: 1.5rem;
     border: 3px solid $Turquoise;
     padding: 1.2rem 3.2rem;
@@ -87,20 +89,57 @@ a {
     }
 
     @include breakpoint-up(super) {
-        font-size: 2.25rem;
+        font-size: 1.6rem;
         
     }
 }
 
 .svg-icon {
     fill: $White;
-    
 
     &:hover svg{
         transition: $Time;
         fill: $Pink;
     }
 }
+
+.disabled {
+    display: none;
+}
+
+.light-theme {
+    transition: $Time;
+    background-color: $White;
+    a {
+        color: $Grey;
+    }
+    nav {
+        a {
+            color: $Grey;
+        }
+    }
+
+    .header {
+        &__image-desktop {
+            
+        }
+
+        &__image-mobile {
+
+        }
+
+        
+    }
+
+    .svg-icon {
+        fill: $Grey;
+    }
+}
+
+.dark-theme {
+    transition: $Time;
+}
+
 
 
 
