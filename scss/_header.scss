@@ -3,47 +3,109 @@
     nav {
         padding-top: 1.0625rem;
         padding-bottom: 1.0625rem;
+        height: 5.625rem;
     }
 
     &__burger {
+        padding: 0.9rem 0.75rem;
+        border-radius: 0.1875rem;
+        margin-right: 0.9375rem;
+        background: linear-gradient(45deg, #642B73, #C6426E);
         > span {
             display: block;
-            width: 26px;
+            width: 30px;
             height: 3px;
             background-color: $White;
 
             &:not(:last-child) {
-                margin-bottom: 0.1875rem;
+                margin-bottom: 0.3rem;
             }
+        }
+
+        @include breakpoint-down(medium) {
+            position: fixed;
+            right: 0;
         }
     }
 
     &__links {
+        height: 100%;
         font-size: $Font-text;
+        
         a {
             color: $White;
+            transition: $Time;
+            position: relative;
 
             &:not(:last-child) {
                 margin-right: 3.125rem;
             }
+            
+            &:not(:first-child)::before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 3px;
+                right: 0;
+                left: 0;
+                bottom: -30px;
+                transition: $Time;
+            }
+
+            &:hover {
+                color: $Pink;
+
+                &::before {
+                    background: $Pink;
+                }
+            }
+        }
+
+        @include breakpoint-up(super) {
+            font-size: $Font-heading;
         }
     }
 
     &__content {
+        font-size: 2.5rem;
         padding-top: 8.125rem;
+
+        @include breakpoint-down(mobile) {
+            padding-top: 4rem;
+        }
+
+        @include breakpoint-up(super) {
+            padding-top: 13rem;
+        }
     }
 
     &__title {
-        font-size: 2.5rem;
+        max-width: 46.875rem;
         font-weight: 700;
         letter-spacing: 0.05em;
         line-height: 3.75rem;
-        background-image: linear-gradient(45deg, #c0392b, #8e44ad);
+        background-image: linear-gradient(45deg, #642B73, #C6426E);
         background-size: 200%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
         animation: gradient 5s ease infinite alternate;
+
+        @include breakpoint-down(small) {
+            font-size: 2.5rem;
+        }
+
+        @include breakpoint-up(medium) {
+            font-size: 3.75rem;
+            line-height: 5rem;
+            letter-spacing: 0.2rem;
+        }
+
+        @include breakpoint-up(super) {
+            font-size: 4.5rem;
+            max-width: 50.5rem;
+            line-height: 5.4375rem;
+        }
     }
 
     &__subtitle {
@@ -51,22 +113,84 @@
         font-style: italic;
         color: $Grey;
         letter-spacing: 0.1em;
-        padding-top: 0.875rem;
-        padding-bottom: 1.875rem;
+        
+        // padding-top: 0.875rem;
+        // padding-bottom: 1.875rem;
+
+        @include breakpoint-down(small) {
+            font-size: 0.75rem;
+        }
+
+        @include breakpoint-up(medium) {
+            font-size: 1.2rem;
+            line-height: 4.5rem;
+            letter-spacing: 0.2rem;
+        }
+
+        
+
+        @include breakpoint-up(super) {
+            font-size: 1.8rem;
+            max-width: 50.5rem;
+            margin: 1.875rem 0 2.5rem;
+            
+        }
     }
 
     &__social {
+        a {
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+            }
+        }
+        @include breakpoint-down(small) {
+            display: none;
+        }
+
+        @include breakpoint-up(super) {
+            svg {
+                transform: scale(1.2);
+            }
+            a {
+                &:not(:last-child) {
+                    margin-right: 2.875rem;
+                }   
+            }
+            
+        }
     }
 
-    &__image {
+    &__image-desktop, &__image-mobile {
         position: absolute;
-        width: 30.25rem;
-        height: 32rem;
-        right: -18.4375rem;
         bottom: 0;
-        opacity: 0.2;
+        right: 0;
         z-index: -1;
     }
+
+    &__image-desktop {
+        width: 39.9375rem;
+        height: 42.25rem;
+
+        @include breakpoint-up(super) {
+            width: 44.875rem;
+            height: 47.5rem;
+        }
+
+        @include breakpoint-down(large) {
+            opacity: .2;
+        }
+    }
+
+    &__image-mobile {
+        opacity: .2;
+        height: 32rem;
+    }
+
+    &__btn {
+        margin-bottom: 3.125rem;
+    }
+
+
     .telegram {
     }
     .linkedin {

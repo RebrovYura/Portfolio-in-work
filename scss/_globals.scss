@@ -1,6 +1,7 @@
 html {
     font-size: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -25,8 +26,22 @@ a {
 }
 
 .container {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    @include breakpoint-up(large) {
+        padding: 1.25rem 7.5rem 0;
+    }
+
+    &--pl {
+        padding-left: 1.25rem;
+    }
+
+    &--pr {
+        padding-right: 1.25rem;
+    }
+
+    &--px {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
 }
 
 // Flexbox
@@ -42,13 +57,13 @@ a {
     }
 }
 
-.hide-for-mobile {
+.hide-for-mobile { // Hide for tablets and mobile
     @include breakpoint-down(medium) {
         display: none;
     }
 }
 
-.hide-for-desktop {
+.hide-for-desktop { // Hide for desktop viewport width
     @include breakpoint-up(large) {
         display: none;
     }
@@ -56,31 +71,35 @@ a {
 
 .default-btn {
     display: inline-block;
+    font-size: 1.5rem;
+    border: 3px solid $Turquoise;
+    padding: 1.2rem 3.2rem;
     transition: $Time;
-    
-    a {
-        display: inline-block;
-        border: 3px solid $Turquoise;
-        padding: 0.8125rem 3.125rem;
-        font-size: 1.125rem;
-        color: $Turquoise;
-        transition: $Time;
+    color: $Turquoise;
 
-        &:hover {
-            color: $White;
-        }
-    }
-
-    &:hover{
+    &:hover {
         background-color: $Turquoise;
+        color: $White;
     }
 
+    @include breakpoint-down(small) {
+        font-size: 1.125rem;
+    }
 
-    
+    @include breakpoint-up(super) {
+        font-size: 2.25rem;
+        
+    }
 }
 
 .svg-icon {
+    fill: $White;
+    
 
+    &:hover svg{
+        transition: $Time;
+        fill: $Pink;
+    }
 }
 
 
