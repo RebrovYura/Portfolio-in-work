@@ -1,5 +1,15 @@
 .header {
     height: 100vh;
+
+    &__navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #642b73;
+        filter: blur(20px);
+        width: 100vw;
+    }
+
     nav {
         padding-top: 1.0625rem;
         padding-bottom: 1.0625rem;
@@ -10,12 +20,15 @@
         padding: 0.9rem 0.75rem;
         border-radius: 0.1875rem;
         margin-right: 0.9375rem;
-        background: linear-gradient(45deg, #642B73, #C6426E);
+        background: linear-gradient(45deg, #642b73, #c6426e);
+        z-index: $ZMain;
         > span {
             display: block;
-            width: 30px;
+            width: 26px;
             height: 3px;
             background-color: $White;
+            transition: all $Time;
+            transform-origin: 9%;
 
             &:not(:last-child) {
                 margin-bottom: 0.3rem;
@@ -28,27 +41,55 @@
         }
     }
 
+    &.open {
+        .header__burger {
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .overlay {
+        visibility: hidden;
+        position: fixed;
+        top: 5.625rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient($LightGrey, transparent);
+        transition: $Time;
+    }
+
     &__links {
         height: 100%;
         font-size: $Font-text;
         font-family: $SecondFont;
         letter-spacing: 0.1em;
-        
+        z-index: $ZMain;
+
         a {
             color: $White;
             transition: $Time;
             position: relative;
 
-            &:first-child{
-                height: 36px;
-                width: 36px;
-            }
+            // &:first-child {
+            //     height: 36px;
+            //     width: 36px;
+            // }
 
             &:not(:last-child) {
                 margin-right: 3.125rem;
             }
-            
-            &:not(:first-child)::before {
+
+            &::before {
                 content: "";
                 position: absolute;
                 display: block;
@@ -73,17 +114,11 @@
         }
     }
 
-    .sun, .moon {
-
-        &:hover svg{
+    .sun,
+    .moon {
+        &:hover svg {
             transform: scale(1.1);
         }
-        
-
-    }
-
-    .moon {
-
     }
 
     &__content {
@@ -100,12 +135,14 @@
     }
 
     &__title {
+        position: relative;
         max-width: 46.875rem;
         font-weight: 700;
         letter-spacing: 0.05em;
         line-height: 3.75rem;
-        background-image: linear-gradient(45deg, #642B73, #C6426E);
+        background-image: linear-gradient(45deg, #642b73, #c6426e);
         background-size: 200%;
+        z-index: $ZMain;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -130,11 +167,13 @@
     }
 
     &__subtitle {
+        position: relative;
         font-size: 0.875rem;
         font-style: italic;
         color: $Grey;
         letter-spacing: 0.1em;
         margin: 1.875rem 0 2.5rem;
+        z-index: $ZMain;
 
         @include breakpoint-down(small) {
             font-size: 0.75rem;
@@ -145,18 +184,17 @@
             font-size: 1.2rem;
             //line-height: 4.5rem;
             letter-spacing: 0.2rem;
-            
         }
 
         @include breakpoint-up(super) {
             font-size: 1.6rem;
             max-width: 50.5rem;
             margin: 1.875rem 0 2.5rem;
-            
         }
     }
 
     &__social {
+        z-index: $ZMain;
         a {
             &:not(:last-child) {
                 margin-right: 1.5rem;
@@ -170,17 +208,17 @@
             a {
                 &:not(:last-child) {
                     margin-right: 2.1rem;
-                }   
+                }
             }
-            
         }
     }
 
-    &__image-desktop, &__image-mobile {
+    &__image-desktop,
+    &__image-mobile {
         position: absolute;
         bottom: 0;
         right: 0;
-        z-index: 1;
+        z-index: $ZSecond;
     }
 
     &__image-desktop {
@@ -193,19 +231,19 @@
         }
 
         @include breakpoint-down(large) {
-            opacity: .2;
+            opacity: 0.2;
         }
     }
 
     &__image-mobile {
-        opacity: .2;
+        opacity: 0.2;
         height: 32rem;
     }
 
     &__btn {
         margin-bottom: 3.125rem;
+        z-index: $ZMain;
     }
-
 
     .telegram {
     }
@@ -214,5 +252,28 @@
     .instagram {
     }
     .github {
+    }
+
+    &__menu {
+        position: fixed;
+        background: $LightGrey;
+        border-radius: 4px;
+        padding: 1.625rem;
+        z-index: 30;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        transition: $Time;
+
+        a {
+            color: $Pink;
+            padding: 1.6rem 0;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__theme-toggle {
+
     }
 }
