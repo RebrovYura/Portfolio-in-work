@@ -3,24 +3,26 @@
 
     &__navigation {
         position: fixed;
+        background: transparent;
+        //filter: blur(10px);
         top: 0;
         left: 0;
-        background: #642b73;
-        filter: blur(20px);
         width: 100vw;
+        z-index: 35;
     }
 
     nav {
         padding-top: 1.0625rem;
         padding-bottom: 1.0625rem;
         height: 5.625rem;
+        z-index: 5;
     }
 
     &__burger {
         padding: 0.9rem 0.75rem;
         border-radius: 0.1875rem;
         margin-right: 0.9375rem;
-        background: linear-gradient(45deg, #642b73, #c6426e);
+        //background: linear-gradient(45deg, #642b73, #c6426e);
         z-index: $ZMain;
         > span {
             display: block;
@@ -104,6 +106,7 @@
                 color: $Pink;
 
                 &::before {
+                    animation: underline $Time;
                     background: $Pink;
                 }
             }
@@ -123,14 +126,14 @@
 
     &__content {
         font-size: 2.5rem;
-        padding-top: 8.125rem;
+        padding-top: 10rem;
 
-        @include breakpoint-down(mobile) {
-            padding-top: 4rem;
-        }
+        // @include breakpoint-down(mobile) {
+        //     padding-top: 4rem;
+        // }
 
         @include breakpoint-up(super) {
-            padding-top: 10rem;
+            padding-top: 14rem;
         }
     }
 
@@ -194,22 +197,8 @@
     }
 
     &__social {
-        z-index: $ZMain;
-        a {
-            &:not(:last-child) {
-                margin-right: 1.5rem;
-            }
-        }
         @include breakpoint-down(small) {
             display: none;
-        }
-
-        @include breakpoint-up(super) {
-            a {
-                &:not(:last-child) {
-                    margin-right: 2.1rem;
-                }
-            }
         }
     }
 
@@ -261,19 +250,29 @@
         padding: 1.625rem;
         z-index: 30;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-56%);
         width: 70%;
         transition: $Time;
 
         a {
             color: $Pink;
-            padding: 1.6rem 0;
+            padding: 2rem 0;
             display: block;
             text-align: center;
         }
     }
 
     &__theme-toggle {
+        margin-right: 5rem;
+        margin-top: 0.5rem;
 
+        @include breakpoint-down(medium) {
+            margin-right: 7rem;
+        }
+
+    }
+
+    &__btn-social {
+        display: inline-block;
     }
 }

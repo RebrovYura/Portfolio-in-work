@@ -43,3 +43,21 @@
 .fade-out {
     animation: fade-out $Time ease-in-out forwards;
 }
+
+@keyframes underline {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes border {
+    0% {
+
+    }
+    100% {
+        
+    }
+}

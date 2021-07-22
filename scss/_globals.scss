@@ -25,9 +25,23 @@ a {
     text-decoration: none;
 }
 
+ul, li {
+    list-style: none;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
 .container {
     @include breakpoint-up(large) {
         padding: 1.25rem 7.5rem 0;
+    }
+
+    &--mt {
+        
+        //padding-bottom: 1.25rem;
     }
 
     &--pl {
@@ -44,6 +58,12 @@ a {
     }
 
     &--mx {
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+
+    &--burger {
+        margin-top: 6.875rem;
         margin-left: 1.25rem;
         margin-right: 1.25rem;
     }
@@ -91,10 +111,12 @@ a {
     font-family: $SecondFont;
     letter-spacing: 0.1em;
     font-size: 1.5rem;
+    background: transparent;
     border: 3px solid $Turquoise;
     padding: 1.2rem 3.2rem;
     transition: $Time;
     color: $Turquoise;
+    cursor: pointer;
 
     &:hover {
         background-color: $Turquoise;
@@ -128,6 +150,22 @@ a {
 .light-theme {
     transition: $Time;
     background-color: $White;
+    .header {
+        &__burger {
+            span {
+                background-color: $LightGrey;
+            }
+        }
+
+        &__menu {
+            background: $Grey;
+
+            a {
+                color: $Turquoise;
+            }
+        }
+    }
+
     a {
         color: $Grey;
     }
@@ -139,6 +177,18 @@ a {
 
     .svg-icon {
         fill: $Grey;
+    }
+
+    .contact {
+        color: $LightGrey;
+
+        input, textarea {
+            background: $LightGrey;
+
+            &:focus {
+                border: 1px solid $Pink;
+            }
+        }
     }
 }
 

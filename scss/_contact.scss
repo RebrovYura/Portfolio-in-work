@@ -1,0 +1,102 @@
+.contact {
+    padding-top: $BetweenBlock;
+
+    &__content {
+    }
+
+    &__form {
+        max-width: 43.75rem;
+    }
+
+    &__title {
+        color: $Turquoise;
+        font-size: $Font-heading;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: 2.5rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 2.5rem;
+    }
+
+    &__image {
+    }
+
+    &__btn {
+        margin-top: 1rem;
+        float: right;
+        border: 3px solid $Pink;
+        color: $Pink;
+
+        &:hover {
+            background: $Pink;
+            color: $White;
+        }
+    }
+
+    input,
+    textarea {
+        font-family: $SecondFont;
+        font-size: 1.125rem;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        background: $LightGrey;
+        color: $White;
+        width: 100%;
+        padding: 1.25rem;
+        border: 1px solid transparent;
+        transition: $Time;
+
+        &:focus {
+            border: 1px solid $Turquoise;
+        }
+
+        
+    }
+
+    input {
+        margin-bottom: 0.75rem;
+    }
+
+
+    input[name="name"] {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    input[name="last_name"] {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.names {
+    display: inline-block;
+    width: 49%;
+}
+
+.last {
+    margin-left: 0.375rem;
+}
+
+.form {
+    
+}
+
+@media screen and (max-width: 40.8125em) {
+    .names {
+        display: block;
+        width: 100%;
+    }
+
+    .last {
+        margin-left: 0;
+    }
+}
