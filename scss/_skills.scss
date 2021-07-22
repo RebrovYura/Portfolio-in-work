@@ -1,0 +1,157 @@
+.skills {
+    padding-top: $BetweenBlock;
+
+    &__content {
+    }
+
+    &__image {
+    }
+
+    &__skill {
+        font-family: $SecondFont;
+        font-weight: 700;
+        max-width: 56.25rem;
+        width: 100%;
+        background: $LightGrey;
+        border-radius: 5px; // ! -------------------------
+
+        &__text {
+        }
+
+        &__title {
+        }
+
+        &__subtitle {
+        }
+    }
+
+    &__skill-name {
+        margin: 0.9375rem 0;
+    }
+
+    &__skill-bar {
+        height: 0.875rem;
+        background: $DarkGrey;
+        border-radius: 3px;
+    }
+
+    &__skill-progress {
+        position: relative;
+        height: 0.875rem;
+        background: $Pink;
+        border-radius: 3px;
+
+        &::before {
+            content: attr(per);
+            position: absolute;
+            padding: 5px;
+            background: $White;
+            color: $LightGrey;
+            font-size: 0.875rem;
+            border-radius: 3px;
+            top: -2.1875rem;
+            right: 0;
+            transform: translateX(50%);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0.625rem;
+            height: 0.625rem;
+            background: $White;
+            top: -0.9375rem;
+            right: 0;
+            transform: translateX(50%) rotate(45deg);
+        }
+    }
+
+    &__tools {
+        margin-top: 10rem;
+    }
+    
+}
+
+.creativity {
+    height: 0.875rem;
+    background-size: 120%;
+    background: linear-gradient(45deg,#7b4397, #dc2430);
+    animation: gradient 5s ease infinite alternate;
+    border-radius: 3px;
+
+    &::before {
+        content: none;
+    }
+
+    &::after {
+        content: none;
+    }
+}
+
+.tools {
+
+    &__text {
+    }
+
+    &__title {
+    }
+
+    &__subtitle {
+    }
+
+    &__cards {
+        //background: $White;
+        width: 100%;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: repeat(3, 100fr);
+
+        @include breakpoint-down(small) {
+            grid-template-columns: repeat(2, 100fr);
+        }
+
+    }
+
+    &__card {
+        display: inline-block;
+        border-radius: 5px;
+        max-width: 200px;
+        text-align: center;
+        transition: $Time;
+        color: transparent;
+        margin: 0 auto;
+
+        &:hover {
+            transform: scale(1.1);
+            background: $White;
+            color: $LightGrey;
+            
+        }
+
+        @include breakpoint-down(medium) {
+            color: $White;
+        }
+
+    }
+
+    &__image {
+        margin: 0 auto;
+        
+        img {
+            max-width: 175px;
+            max-height: 176px;
+            width: 100%;
+            height: 100%;
+        }
+        
+    }
+
+    &__name {
+        margin-top: 1rem;
+    }
+}
+.default-title {
+}
+.default-subtitle {
+}
+

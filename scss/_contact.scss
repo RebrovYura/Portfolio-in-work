@@ -9,15 +9,13 @@
     }
 
     &__title {
-        color: $Turquoise;
-        font-size: $Font-heading;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        margin-bottom: 2.5rem;
+        
     }
 
     &__subtitle {
-        margin-bottom: 2.5rem;
+        span {
+            font-size: 1.875rem;
+        }
     }
 
     &__image {

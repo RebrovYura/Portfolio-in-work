@@ -246,6 +246,7 @@
     &__menu {
         position: fixed;
         background: $LightGrey;
+        clip-path: polygon(30% 0, 100% 0, 100% 70%, 70% 100%, 0 100%, 0 30%);
         border-radius: 4px;
         padding: 1.625rem;
         z-index: 30;

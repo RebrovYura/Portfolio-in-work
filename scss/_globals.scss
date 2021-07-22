@@ -25,7 +25,8 @@ a {
     text-decoration: none;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
 }
 
@@ -40,7 +41,6 @@ form {
     }
 
     &--mt {
-        
         //padding-bottom: 1.25rem;
     }
 
@@ -55,6 +55,18 @@ form {
     &--px {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+    }
+
+    &--py {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    &--pxy {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
     }
 
     &--mx {
@@ -94,13 +106,15 @@ form {
     }
 }
 
-.hide-for-mobile { // Hide for tablets and mobile
+.hide-for-mobile {
+    // Hide for tablets and mobile
     @include breakpoint-down(medium) {
         display: none;
     }
 }
 
-.hide-for-desktop { // Hide for desktop viewport width
+.hide-for-desktop {
+    // Hide for desktop viewport width
     @include breakpoint-up(large) {
         display: none;
     }
@@ -129,14 +143,28 @@ form {
 
     @include breakpoint-up(super) {
         font-size: 1.6rem;
-        
     }
+}
+
+.default-title {
+    font-family: $MainFont;
+    color: $Turquoise;
+    font-size: $Font-heading;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 2.5rem;
+}
+
+.default-subtitle {
+    font-family: $MainFont;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
 }
 
 .svg-icon {
     fill: $White;
 
-    &:hover svg{
+    &:hover svg {
         transition: $Time;
         fill: $Pink;
     }
@@ -179,10 +207,37 @@ form {
         fill: $Grey;
     }
 
+    .skills {
+
+        &__skill {
+            background: transparent;
+        }
+
+        &__skill-name {
+            color: $LightGrey;
+        }
+
+        &__skill-progress {
+            &::before {
+                color: $White;
+                background: $LightGrey;
+            }
+
+            &::after {
+                background: $LightGrey;
+            }
+        }
+
+        .default-subtitle {
+            color: $LightGrey;
+        }
+    }
+
     .contact {
         color: $LightGrey;
 
-        input, textarea {
+        input,
+        textarea {
             background: $LightGrey;
 
             &:focus {
@@ -190,13 +245,9 @@ form {
             }
         }
     }
+    
 }
 
 .dark-theme {
     transition: $Time;
 }
-
-
-
-
-
