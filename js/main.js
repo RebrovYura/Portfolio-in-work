@@ -27,34 +27,36 @@ const burger = document.querySelector('#burger');
 const header = document.querySelector('#header');
 const overlay = document.querySelector('.overlay');
 const menu = document.querySelector('#menu');
+const links = menu.querySelectorAll('.header__burger-menu');
 
-burger.addEventListener('click', function () {
+function burgerMenu() {
 
-    if (header.classList.contains('open')) {
-        header.classList.remove('open');
-        overlay.classList.remove('fade-in');
-        overlay.classList.add('fade-out');
-        menu.classList.add('disabled');
-        body.setAttribute('style', 'overflow: auto');
+    burger.addEventListener('click', function () {
+        toggleMenu();
+    });
 
-    } else {
-        header.classList.add('open');
-        overlay.classList.add('fade-in');
-        overlay.classList.remove('fade-out');
-        menu.classList.remove('disabled');
-        body.setAttribute('style', 'overflow: hidden');
-    }
+    [].forEach.call(links, function (el) {
+        el.addEventListener('click', () => toggleMenu());
+    });
 
-    [].forEach.call(menu, function (el) {
-        el.addEventListener('click', function () {
+    function toggleMenu() {
+        if (header.classList.contains('open')) {
             header.classList.remove('open');
             overlay.classList.remove('fade-in');
             overlay.classList.add('fade-out');
             menu.classList.add('disabled');
             body.setAttribute('style', 'overflow: auto');
-        });
-    });
-});
+
+        } else {
+            header.classList.add('open');
+            overlay.classList.add('fade-in');
+            overlay.classList.remove('fade-out');
+            menu.classList.remove('disabled');
+            body.setAttribute('style', 'overflow: hidden');
+        }
+    }
+};
+burgerMenu();
 
 // ! ---------------------------------------------- 
 
@@ -62,6 +64,7 @@ burger.addEventListener('click', function () {
 // ! Copy footer email
 
 function copyText() {
+    const span = document.getElementById("copyInner");
     let email = document.createElement("textarea");
     document.body.appendChild(email);
     email.value = 'yurirebrov01@gmail.com';
@@ -69,7 +72,9 @@ function copyText() {
     document.execCommand("copy");
     document.body.removeChild(email);
 
-    document.getElementById("copyInner").innerText = "Copied :)";
+
+    span.innerText = "Copied!";
+    span.setAttribute('style', 'background: #FF2E63');
     return false;
 }
 

@@ -74,9 +74,7 @@
 
 .creativity {
     height: 0.875rem;
-    background-size: 120%;
-    background: linear-gradient(45deg,#7b4397, #dc2430);
-    animation: gradient 5s ease infinite alternate;
+    background: linear-gradient(45deg,#40E0D0, #FF8C00, #FF0080);
     border-radius: 3px;
 
     &::before {
@@ -116,6 +114,11 @@
         @include breakpoint-up(xlarge) {
             display: flex;
             justify-content: space-between;
+
+        }
+
+        @include breakpoint-down(xlarge) {
+            color: $LightGrey;
         }
     }
 
@@ -125,7 +128,6 @@
         max-width: 200px;
         text-align: center;
         transition: $Time;
-        color: transparent;
         margin: 0 auto;
 
         &:hover {
@@ -135,8 +137,8 @@
             
         }
 
-        @include breakpoint-down(medium) {
-            color: $White;
+        @include breakpoint-up(medium) {
+            color: transparent;
         }
 
     }
@@ -157,8 +159,3 @@
         margin-top: 1rem;
     }
 }
-.default-title {
-}
-.default-subtitle {
-}
-
