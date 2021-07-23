@@ -233,6 +233,15 @@ form {
         }
     }
 
+    .tools {
+        &__card {
+            &:hover {
+                background: $Turquoise;
+                color: $White;
+            }
+        }
+    }
+
     .contact {
         color: $LightGrey;
 

@@ -100,7 +100,6 @@
     }
 
     &__cards {
-        //background: $White;
         width: 100%;
         border-radius: 5px;
         display: grid;
@@ -110,6 +109,14 @@
             grid-template-columns: repeat(2, 100fr);
         }
 
+        @include breakpoint-down(mobile) {
+            grid-template-columns: repeat(1, 100fr);
+        }
+
+        @include breakpoint-up(xlarge) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__card {

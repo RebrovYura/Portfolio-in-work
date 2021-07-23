@@ -60,14 +60,15 @@
     }
 
     .overlay {
-        visibility: hidden;
+        opacity: 0;
         position: fixed;
         top: 5.625rem;
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient($LightGrey, transparent);
+        background: linear-gradient($DarkGrey, transparent);
         transition: $Time;
+        z-index: 10;
     }
 
     &__links {
@@ -81,11 +82,6 @@
             color: $White;
             transition: $Time;
             position: relative;
-
-            // &:first-child {
-            //     height: 36px;
-            //     width: 36px;
-            // }
 
             &:not(:last-child) {
                 margin-right: 3.125rem;

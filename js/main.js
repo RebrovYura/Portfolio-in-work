@@ -23,7 +23,6 @@ moon.addEventListener('click', function () {
 
 // ! Burger menu script
 
-
 const burger = document.querySelector('#burger');
 const header = document.querySelector('#header');
 const overlay = document.querySelector('.overlay');
@@ -58,4 +57,24 @@ burger.addEventListener('click', function () {
 });
 
 // ! ---------------------------------------------- 
+
+
+// ! Copy footer email
+
+function copyText() {
+    let email = document.createElement("textarea");
+    document.body.appendChild(email);
+    email.value = 'yurirebrov01@gmail.com';
+    email.select();
+    document.execCommand("copy");
+    document.body.removeChild(email);
+
+    document.getElementById("copyInner").innerText = "Copied :)";
+    return false;
+}
+
+// ! ---------------------------------------------- 
+
+
+// !
 
